@@ -3,5 +3,3 @@ C:\Users\Matt\Desktop\IntenseWizardy\IntenseWizardy\IntenseWizardy\bin\Debug\Int
 C:\Users\Matt\Desktop\IntenseWizardy\IntenseWizardy\IntenseWizardy\obj\x86\Debug\IntenseWizardy.csprojResolveAssemblyReference.cache
 C:\Users\Matt\Desktop\IntenseWizardy\IntenseWizardy\IntenseWizardy\obj\x86\Debug\IntenseWizardy.exe
 C:\Users\Matt\Desktop\IntenseWizardy\IntenseWizardy\IntenseWizardy\obj\x86\Debug\IntenseWizardy.pdb
-C:\Users\Matt\Documents\GitHub\IntenseWizardy\IntenseWizardy\obj\x86\Debug\IntenseWizardy.exe
-C:\Users\Matt\Documents\GitHub\IntenseWizardy\IntenseWizardy\obj\x86\Debug\IntenseWizardy.pdb

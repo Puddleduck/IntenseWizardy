@@ -6,23 +6,12 @@ namespace IntenseWizardy
 	{
 		static int hasClub = 0;
 		static int hasCoinPurse = 0;
+		static string age;
 
 		public static void Main (string[] args)
 		{
 			Console.Title = "Intense Wizardy";
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine();
-			Console.WriteLine("                     Intense Wizardy! - A Text Adventure Game! ");
-			Console.WriteLine("                   : Created by Sips and written by Puddleduck :         ");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to begin!");
+			Console.WriteLine("\n \n \n \n \n \n \n \n                     Intense Wizardy! - A Text Adventure Game! \n\n                   : Created by Sips and written by Puddleduck :         \n\n                             Press enter to begin!\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			showNotes();
@@ -30,17 +19,7 @@ namespace IntenseWizardy
 
 		public static void showNotes()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("Welcome to Intense Wizardy!");
-			Console.WriteLine ();
-			Console.WriteLine ("Notes:");
-			Console.WriteLine ("This is my first complete game, so forgive any bugs and hopefully they aren't");
-			Console.WriteLine ("too game breaking. This game will parse your text to the best of my ability,");
-			Console.WriteLine ("but it may not understand what you mean.");
-			Console.WriteLine ("Try and keep any imput short and sweet, and please listen to what it tells you");
-			Console.WriteLine ("to do!");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nWelcome to Intense Wizardy! \n\nNotes:\nThis is my first complete game, so forgive any bugs and hopefully they aren't\ntoo game breaking. This game will parse your text to the best of my ability,\nbut it may not understand what you mean.\nTry and keep any imput short and sweet, and please listen to what it tells you\nto do!\n\n                             Press enter to continue!\n\n\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			showIntro ();
@@ -48,19 +27,7 @@ namespace IntenseWizardy
 
 		public static void showIntro()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You wake in a cabin, you notice you are wearing blue robes.");
-			Console.WriteLine ("This is unusual.");
-			Console.WriteLine ("You do not usually wear blue robes.");
-			Console.WriteLine ("You rub your eyes to try and see more in the dark cabin.");
-			Console.WriteLine ("Your hands feel dry yet soft against your face.");
-			Console.WriteLine ("You clamber to your feet and search the walls of the cabin for an opening.");
-			Console.WriteLine ("The walls of the cabin are cold, they feel like stone.");
-			Console.WriteLine ("I lied, you are not in a cabin. You are in a cave.");
-			Console.WriteLine ("A mystical cave.");
-			Console.WriteLine ("In the darkness, you find what you think is an opening.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nYou wake in a cabin, you notice you are wearing blue robes.\nThis is unusual.\nYou do not usually wear blue robes.\nYou rub your eyes to try and see more in the dark cabin.\nYour hands feel dry yet soft against your face.\nYou clamber to your feet and search the walls of the cabin for an opening.\nThe walls of the cabin are cold, they feel like stone.\nI lied, you are not in a cabin. You are in a cave.\nA mystical cave.\nIn the darkness, you find what you think is an opening.\n\n                             Press enter to continue!\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			exitCave ();
@@ -68,40 +35,42 @@ namespace IntenseWizardy
 
 		public static void exitCave()
 		{
-			Console.WriteLine();
-			Console.WriteLine ("Do you go through the opening?");
-			Console.WriteLine ("(Type your answer and then press enter!)");
-			Console.WriteLine ();
+			string checkOpen;
 
-			string checkOpen = Console.ReadLine ();
+			Console.WriteLine ("\nDo you go through the opening?\n(Type your answer and then press enter!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-			if (checkOpen == "yes" || checkOpen == "Yes" || checkOpen == "y" || checkOpen == "Y" || checkOpen == "YES") {
-				Console.Clear ();
-				openOut ();
-			}
-			else if (checkOpen == "no" || checkOpen == "No" || checkOpen == "n" || checkOpen == "N" || checkOpen == "NO")
-			{
-				Console.Clear ();
-				openIn ();
-			}
-			else {
-				Console.WriteLine ("Invalid input, try again!");
-				exitCave ();
-			}
+			do {
+				Console.Write("Answer: ");
+
+				checkOpen = Console.ReadLine ();
+
+				if (checkOpen != null) {
+					Console.Write ("Answer: " + checkOpen);
+
+					if (checkOpen == "yes" || checkOpen == "Yes" || checkOpen == "y" || checkOpen == "Y" || checkOpen == "YES") {
+						Console.Clear ();
+						System.Threading.Thread.Sleep(500);
+						openOut ();
+					}
+					else if (checkOpen == "no" || checkOpen == "No" || checkOpen == "n" || checkOpen == "N" || checkOpen == "NO")
+					{
+						Console.Clear ();
+						System.Threading.Thread.Sleep(500);
+						openIn ();
+					}
+					else {
+						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+						System.Threading.Thread.Sleep(2500);
+						exitCave ();
+					}
+				}
+
+			} while(checkOpen != null);
 		}
 
 		public static void openOut()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You scramble through the opening into another dark chamber.");
-			Console.WriteLine ("This room is slightly warmer than the previous one.");
-			Console.WriteLine ("You see a tiny strip of light coming from one of the walls.");
-			Console.WriteLine ("You walk over and investigate.");
-			Console.WriteLine ("Staring at the strip of light, you can see that it is a crack in the wall.");
-			Console.WriteLine ("Through the crack you can see a room, with a fireplace.");
-			Console.WriteLine ("You search the chamber for a way through to the room.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nYou scramble through the opening into another dark chamber.\nThis room is slightly warmer than the previous one.\nYou see a tiny strip of light coming from one of the walls.\nYou walk over and investigate.\nStaring at the strip of light, you can see that it is a crack in the wall.\nThrough the crack you can see a room, with a fireplace.\nYou search the chamber for a way through to the room.\n\n                             Press enter to continue!\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			searchChamber ();
@@ -109,17 +78,7 @@ namespace IntenseWizardy
 
 		public static void openIn()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You continue to explore the dark room.");
-			Console.WriteLine ("You walk to the other side of the cave and discover a pot on the ground.");
-			Console.WriteLine ("You reach into the pot.");
-			Console.WriteLine ("You cry out in pain as you feel the fangs of a snake clamp down on your hand.");
-			Console.WriteLine ("You fall back, the snake still attatched to your hand, hissing loudly.");
-			Console.WriteLine ("You feel your life draining from you.");
-			Console.WriteLine ("You die.");
-			Console.WriteLine ("Due to the fact that this is a game, you are allowed to return to your previous decision. Try and pick an option that doesn't get you killed this time.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nYou continue to explore the dark room.\nYou walk to the other side of the cave and discover a pot on the ground.\nYou reach into the pot.\nYou cry out in pain as you feel the fangs of a snake clamp down on your hand.\nYou fall back, the snake still attatched to your hand, hissing loudly.\nYou feel your life draining from you.\nYou die.\n\nDue to the fact that this is a game, you are allowed to return to your previous decision. Try and pick an option that doesn't get you killed this time.\n\n                             Press enter to continue!\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			exitCave ();
@@ -127,36 +86,42 @@ namespace IntenseWizardy
 
 		public static void searchChamber()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You see a rock and a puddle, which do you investigate first?");
-			Console.WriteLine ("(Type your answer and then press enter!)");
-			Console.WriteLine ();
 
-			string puddleOrRock = Console.ReadLine ();
+			string puddleOrRock;
 
-			if (puddleOrRock == "rock" || puddleOrRock == "Rock" || puddleOrRock == "ROCK" || puddleOrRock == "the rock") {
-				Console.Clear ();
-				examineRock ();
-			}else if(puddleOrRock == "puddle" || puddleOrRock == "Puddle" || puddleOrRock == "PUDDLE" || puddleOrRock == "the puddle")
-			{
-				Console.Clear ();
-				examinePuddle ();
-			}else{
-				Console.WriteLine ("Invalid input, try again!");
-				searchChamber ();
-			}
+			Console.WriteLine ("\nYou see a rock and a puddle, which do you investigate first?\n\n(Type your answer and then press enter!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+			do {
+				Console.Write("Answer: ");
+
+				puddleOrRock = Console.ReadLine ();
+
+				if (puddleOrRock != null) {
+
+					Console.Write ("Answer: " + puddleOrRock);
+
+					if (puddleOrRock == "rock" || puddleOrRock == "Rock" || puddleOrRock == "ROCK" || puddleOrRock == "the rock") {
+						Console.Clear ();
+						System.Threading.Thread.Sleep(500);
+						examineRock ();
+					}else if(puddleOrRock == "puddle" || puddleOrRock == "Puddle" || puddleOrRock == "PUDDLE" || puddleOrRock == "the puddle")
+					{
+						Console.Clear ();
+						System.Threading.Thread.Sleep(500);
+						examinePuddle ();
+					}else{
+						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+						System.Threading.Thread.Sleep(2500);
+						searchChamber ();
+					}
+				}
+
+			} while(puddleOrRock != null);
 		}
 
 		public static void examineRock()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You place your hands on the rock and instantly feel it give way.");
-			Console.WriteLine ("The wall crumbles away revealing a passage behind.");
-			Console.WriteLine ("You make your way into the passage, the light getting a little brighter.");
-			Console.WriteLine ("You emerge from the passage into a hallway, and you see a wooden club.");
-			Console.WriteLine ("You also see an open door, with from which you can hear a crackling fire.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nYou place your hands on the rock and instantly feel it give way.\nThe wall crumbles away revealing a passage behind.\nYou make your way into the passage, the light getting a little brighter.\nYou emerge from the passage into a hallway, and you see a wooden club.\nYou also see an open door, with from which you can hear a crackling fire.\n\n                             Press enter to continue!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			hallwayChoice ();
@@ -164,20 +129,7 @@ namespace IntenseWizardy
 
 		public static void examinePuddle()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You kneel down and look into the puddle.");
-			Console.WriteLine ("By the dim light you are able to make out a figure in the reflection.");
-			Console.WriteLine ("You look at the puddle in horror, you are an old man, with a beard!");
-			Console.WriteLine ("You recoil in horror, this isn't how you are supposed to look!");
-			Console.WriteLine ("You scramble back towards rock to sit and rest.");
-			Console.WriteLine ("After all, you are now an old man. You need your rest.");
-			Console.WriteLine ("You lean back against the rock and instantly feel it give way.");
-			Console.WriteLine ("The wall crumbles away revealing a passage behind.");
-			Console.WriteLine ("You make your way into the passage, the light getting a little brighter.");
-			Console.WriteLine ("You emerge from the passage into a hallway, and you see a wooden club.");
-			Console.WriteLine ("You also see an open door, with from which you can hear a crackling fire.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+			Console.WriteLine ("\nYou kneel down and look into the puddle.\nBy the dim light you are able to make out a figure in the reflection.\nYou look at the puddle in horror, you are an old man, with a beard!\nYou recoil in horror, this isn't how you are supposed to look!\nYou scramble back towards rock to sit and rest.\nAfter all, you are now an old man. You need your rest.\nYou lean back against the rock and instantly feel it give way.\nThe wall crumbles away revealing a passage behind.\nYou make your way into the passage, the light getting a little brighter.\nYou emerge from the passage into a hallway, and you see a wooden club.\nYou also see an open door, with from which you can hear a crackling fire.\n\n                             Press enter to continue!\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
 			hallwayChoice ();
@@ -187,25 +139,37 @@ namespace IntenseWizardy
 
 		public static void hallwayChoice()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("What do you do?");
-			Console.WriteLine ("(Type your answer and then press enter, try and keep it pretty simple!)");
-			Console.WriteLine ();
+			Console.WriteLine ("\nWhat do you do? Do you pick up the club or go for the door?\n\n(Type your answer and then press enter, try and keep it pretty simple!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-			string hallway = Console.ReadLine ();
+			string hallway;
 
-			if (hallway.Contains ("pick up") || hallway.Contains ("club")) {
-				Console.Clear ();
-				 hasClub = 1;
-				hallWithClub ();
-			} else if (hallway.Contains ("door") || hallway.Contains ("go to")) {
-				Console.Clear ();
-				 hasClub = 0;
-				hallNoClub ();
-			} else {
-				Console.WriteLine ("Invalid input, try again!");
-				hallwayChoice ();
-			}
+			do {
+				Console.Write("Answer: ");
+
+				hallway = Console.ReadLine ();
+
+				if (hallway != null) {
+
+					Console.Write ("Answer: " + hallway);
+
+					if (hallway.Contains ("pick up") || hallway.Contains ("club")) {
+						Console.Clear ();
+						hasClub = 1;
+						System.Threading.Thread.Sleep(500);
+						hallWithClub ();
+					} else if (hallway.Contains ("door") || hallway.Contains ("go to")) {
+						Console.Clear ();
+						hasClub = 0;
+						System.Threading.Thread.Sleep(500);
+						hallNoClub ();
+					}else{
+						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+						System.Threading.Thread.Sleep(2500);
+						searchChamber ();
+					}
+				}
+
+			} while(hallway != null);
 		}
 
 		public static void hallWithClub()
@@ -285,12 +249,14 @@ namespace IntenseWizardy
 			if (coinPurse == "yes" || coinPurse == "Yes" || coinPurse == "y" || coinPurse == "Y" || coinPurse == "YES") {
 				Console.Clear ();
 				hasCoinPurse = 1;
+				System.Threading.Thread.Sleep(500);
 				afterTroll ();
 			}
 			else if (coinPurse == "no" || coinPurse == "No" || coinPurse == "n" || coinPurse == "N" || coinPurse == "NO")
 			{
 				Console.Clear ();
 				hasCoinPurse = 0;
+				System.Threading.Thread.Sleep(500);
 				afterTroll ();
 			}
 			else {
