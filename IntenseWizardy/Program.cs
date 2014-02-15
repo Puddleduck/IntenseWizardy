@@ -58,6 +58,10 @@ namespace IntenseWizardy
 						System.Threading.Thread.Sleep(500);
 						openIn ();
 					}
+                    else if (checkOpen.Contains("debug"))
+                    {
+                        coinChoice(); 
+                    }
 					else {
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 						System.Threading.Thread.Sleep(2500);
@@ -174,11 +178,7 @@ namespace IntenseWizardy
 
 		public static void hallWithClub()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You picked up the club, that could prove useful soon!");
-			Console.WriteLine ("Armed with your newly obtained club, you advance towards the door.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+            Console.WriteLine("\nYou picked up the club, that could prove useful soon!\nArmed with your newly obtained club, you advance towards the door.\n\n                             Press enter to continue!");
 			Console.ReadLine();
 			Console.Clear();
 			enterRoom ();
@@ -186,10 +186,7 @@ namespace IntenseWizardy
 
 		public static void hallNoClub()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You choose to ignore the club, and go straight towards the door.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+            Console.WriteLine("\nYou choose to ignore the club, and go straight towards the door.\n\n                             Press enter to continue!");
 			Console.ReadLine();
 			Console.Clear();
 			enterRoom ();
@@ -198,25 +195,15 @@ namespace IntenseWizardy
 
 		public static void enterRoom()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You enter the room and take in your surroundings.");
-			Console.WriteLine ("There is a troll standing in one corner, you spot each other.");
-			Console.WriteLine ("The troll pounces on you.");
+            Console.WriteLine("\nYou enter the room and take in your surroundings.\nThere is a troll standing in one corner, you spot each other.\nThe troll pounces on you.");
+
 			if (hasClub == 0) {
-				Console.WriteLine ();
-				Console.WriteLine ("You are defenceless, the troll grabs your butt hard and throws you back out the room.");
-				Console.WriteLine ();
-				Console.WriteLine ("                             Press enter to continue!");
+                Console.WriteLine("\nYou are defenceless, the troll grabs your butt hard and throws you back out the room.\n\n                             Press enter to continue!");
 				Console.ReadLine();
 				Console.Clear();
 				outRoomHallway ();
 			} else if (hasClub == 1) {
-				Console.WriteLine ();
-				Console.WriteLine ("You swing your club and hit the troll on the back of the head.");
-				Console.WriteLine ("The troll dies.");
-				Console.WriteLine ("The troll drops a bag of gold coins.");
-				Console.WriteLine ();
-				Console.WriteLine ("                             Press enter to continue!");
+                Console.WriteLine("\nYou swing your club and hit the troll on the back of the head.\nThe troll dies.\nThe troll drops a bag of gold coins.\n\n                             Press enter to continue!");
 				Console.ReadLine();
 				Console.Clear();
 				coinChoice ();
@@ -227,11 +214,7 @@ namespace IntenseWizardy
 
 		public static void outRoomHallway()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("You fly out the room into the hallway, and you see the wooden club.");
-			Console.WriteLine ("The door is still open, and the troll is still inside.");
-			Console.WriteLine ();
-			Console.WriteLine ("                             Press enter to continue!");
+            Console.WriteLine("\nYou fly out the room into the hallway, and you see the wooden club.\nThe door is still open, and the troll is still inside.\n\n                             Press enter to continue!");
 			Console.ReadLine();
 			Console.Clear();
 			hallwayChoice ();
@@ -239,44 +222,49 @@ namespace IntenseWizardy
 
 		public static void coinChoice()
 		{
-			Console.WriteLine ();
-			Console.WriteLine ("Do you pick up the coin purse?");
-			Console.WriteLine ("(Type your answer and then press enter)");
-			Console.WriteLine ();
+            Console.WriteLine("\nDo you pick up the coin purse?\n(Type your answer and then press enter)\n");
 
-			string coinPurse = Console.ReadLine ();
+            string coinPurse;
 
-			if (coinPurse == "yes" || coinPurse == "Yes" || coinPurse == "y" || coinPurse == "Y" || coinPurse == "YES") {
-				Console.Clear ();
-				hasCoinPurse = 1;
-				System.Threading.Thread.Sleep(500);
-				afterTroll ();
-			}
-			else if (coinPurse == "no" || coinPurse == "No" || coinPurse == "n" || coinPurse == "N" || coinPurse == "NO")
-			{
-				Console.Clear ();
-				hasCoinPurse = 0;
-				System.Threading.Thread.Sleep(500);
-				afterTroll ();
-			}
-			else {
-				Console.WriteLine ("Invalid input, try again!");
-				coinChoice ();
-			}
+            do
+            {
+                Console.Write("Answer: ");
+
+                coinPurse = Console.ReadLine();
+
+                if (coinPurse != null)
+                {
+
+                    Console.Write("Answer: " + coinPurse);
+
+                    if (coinPurse.Contains("y") || coinPurse.Contains("yes") || coinPurse.Contains("YES") || coinPurse.Contains("Yes") || coinPurse.Contains("Y"))
+                    {
+                        Console.Clear();
+                        hasCoinPurse = 1;
+                        System.Threading.Thread.Sleep(500);
+                        afterTroll();
+                    }
+                    else if (coinPurse.Contains("n") || coinPurse.Contains("no") || coinPurse.Contains("NO") || coinPurse.Contains("No") || coinPurse.Contains("N"))
+                    {
+                        Console.Clear();
+                        hasCoinPurse = 0;
+                        System.Threading.Thread.Sleep(500);
+                        afterTroll();
+                    }
+                    else
+                    {
+                        Console.WriteLine(" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        System.Threading.Thread.Sleep(2500);
+                        coinChoice();
+                    }
+                }
+
+            } while (coinPurse != null);
 		}
 
 		public static void afterTroll()
 		{
-			Console.WriteLine ();
-            Console.WriteLine ("You climb over the dead troll's body and move to the other side of the room.");
-            Console.WriteLine ("You glace to your left and catch a full view of yourself in a mirror.");
-            Console.WriteLine ("You take a moment to take in what you see.");
-            Console.WriteLine ("Standing on the mirror is a hunch-backed old man wearing blue velvet robes.");
-            Console.WriteLine ("The robes have silver moons & stars on them, stereotypical wizard shit really...");
-            Console.WriteLine ("You notice that you have a long grey beard.");
-            Console.WriteLine ("This information is useless really, but it is handy to know!");
-            Console.WriteLine();
-            Console.WriteLine("                             Press enter to continue!");
+            Console.WriteLine("\nYou climb over the dead troll's body and move to the other side of the room.\nYou glace to your left and catch a full view of yourself in a mirror.\nYou take a moment to take in what you see.\nStanding on the mirror is a hunch-backed old man wearing blue velvet robes.\nThe robes have silver moons & stars on them, stereotypical wizard shit really...\nYou notice that you have a long grey beard.\nThis information is useless really, but it is handy to know!\n\n                             Press enter to continue!");
             Console.ReadLine();
             Console.Clear();
             exploreRoom();
@@ -284,12 +272,7 @@ namespace IntenseWizardy
 
         public static void exploreRoom()
         {
-            Console.WriteLine ();
-            Console.WriteLine ("You look carefully at the fireplace.");
-            Console.WriteLine("You notice the remains of some papers in the embers.");
-            Console.WriteLine("You wonder what they could be.");
-            Console.WriteLine();
-            Console.WriteLine("                             Press enter to continue!");
+            Console.WriteLine("\nYou look carefully at the fireplace.\nYou notice the remains of some papers in the embers.\nYou wonder what they could be.\n\n                             Press enter to continue!");
             Console.ReadLine();
             Console.Clear();
             examineFire();
@@ -297,22 +280,14 @@ namespace IntenseWizardy
 
         public static void examineFire()
         {
-            Console.WriteLine ();
-            Console.WriteLine ("Do you examine the fire?");
-            Console.WriteLine ("Perhaps you could get a better look at the scraps of paper.");
-            Console.WriteLine ();
+            Console.WriteLine("\nDo you examine the fire?\nPerhaps you could get a better look at the scraps of paper.\n");
 
             string hot = Console.ReadLine();
 
             if (hot == "yes" || hot == "Yes" || hot == "y" || hot == "Y" || hot == "YES")
             {
                 Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine("Why did you think that would be a good idea?");
-                Console.WriteLine("Now you are dead.");
-                Console.WriteLine("Good job."); 
-                Console.WriteLine();
-                Console.WriteLine("                             Press enter to continue!");
+                Console.WriteLine("\nWhy did you think that would be a good idea?\nNow you are dead.\nGood job.\n\n                             Press enter to continue!");
                 Console.ReadLine();
                 Console.Clear();
                 exploreRoom();
@@ -321,14 +296,7 @@ namespace IntenseWizardy
             else if (hot == "no" || hot == "No" || hot == "n" || hot == "N" || hot == "NO")
             {
                 Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine("Good choice, the other option was certain death.");
-                Console.WriteLine("You continue to explore the room.");
-                Console.WriteLine("You find a note on a table in one corner of the room.");
-                Console.WriteLine("You read the note.");
-                Console.WriteLine("The note reads: \n Milk \n Eggs \n Teabags \n Bread \n Newspaper.");
-                Console.WriteLine();
-                Console.WriteLine("                             Press enter to continue!");
+                Console.WriteLine("\nGood choice, the other option was certain death.\nYou continue to explore the room.\nYou find a note on a table in one corner of the room.\nYou read the note.\nThe note reads: \n Milk \n Eggs \n Teabags \n Bread \n Newspaper.\n\n                             Press enter to continue!");
                 Console.ReadLine();
                 Console.Clear();
                 exploreRoom();
@@ -339,7 +307,5 @@ namespace IntenseWizardy
                 examineFire();
             }
         }
-
-
 	}
 }
