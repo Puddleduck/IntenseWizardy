@@ -7,10 +7,13 @@ namespace IntenseWizardy
 		static int hasClub = 0;
 		static int hasCoinPurse = 0;
 		static string age;
-
+		
 		public static void Main (string[] args)
 		{
 			Console.Title = "Intense Wizardy";
+			System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Matt\Dropbox\Public\audio.wma");
+			player.Play();
+			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("\n \n \n \n \n \n \n \n                     Intense Wizardy! - A Text Adventure Game! \n\n                   : Created by Sips and written by Puddleduck :         \n\n                             Press enter to begin!\n\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
@@ -60,11 +63,12 @@ namespace IntenseWizardy
 					}
                     else if (checkOpen.Contains("debug"))
                     {
-                        coinChoice(); 
+						Console.Clear();
+                        contineRoom(); 
                     }
 					else {
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-						System.Threading.Thread.Sleep(2500);
+						System.Threading.Thread.Sleep(500);
 						exitCave ();
 					}
 				}
@@ -115,7 +119,7 @@ namespace IntenseWizardy
 						examinePuddle ();
 					}else{
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-						System.Threading.Thread.Sleep(2500);
+						System.Threading.Thread.Sleep(500);
 						searchChamber ();
 					}
 				}
@@ -168,7 +172,7 @@ namespace IntenseWizardy
 						hallNoClub ();
 					}else{
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-						System.Threading.Thread.Sleep(2500);
+						System.Threading.Thread.Sleep(500);
 						searchChamber ();
 					}
 				}
@@ -254,7 +258,7 @@ namespace IntenseWizardy
                     else
                     {
                         Console.WriteLine(" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-                        System.Threading.Thread.Sleep(2500);
+                        System.Threading.Thread.Sleep(500);
                         coinChoice();
                     }
                 }
@@ -267,6 +271,7 @@ namespace IntenseWizardy
             Console.WriteLine("\nYou climb over the dead troll's body and move to the other side of the room.\nYou glace to your left and catch a full view of yourself in a mirror.\nYou take a moment to take in what you see.\nStanding on the mirror is a hunch-backed old man wearing blue velvet robes.\nThe robes have silver moons & stars on them, stereotypical wizard shit really...\nYou notice that you have a long grey beard.\nThis information is useless really, but it is handy to know!\n\n                             Press enter to continue!");
             Console.ReadLine();
             Console.Clear();
+			System.Threading.Thread.Sleep(500);
             exploreRoom();
 		}
 
@@ -275,6 +280,7 @@ namespace IntenseWizardy
             Console.WriteLine("\nYou look carefully at the fireplace.\nYou notice the remains of some papers in the embers.\nYou wonder what they could be.\n\n                             Press enter to continue!");
             Console.ReadLine();
             Console.Clear();
+			System.Threading.Thread.Sleep(500);
             examineFire();
         }
 
@@ -290,6 +296,7 @@ namespace IntenseWizardy
                 Console.WriteLine("\nWhy did you think that would be a good idea?\nNow you are dead.\nGood job.\n\n                             Press enter to continue!");
                 Console.ReadLine();
                 Console.Clear();
+				System.Threading.Thread.Sleep(500);
                 exploreRoom();
                 
             }
@@ -299,13 +306,40 @@ namespace IntenseWizardy
                 Console.WriteLine("\nGood choice, the other option was certain death.\nYou continue to explore the room.\nYou find a note on a table in one corner of the room.\nYou read the note.\nThe note reads: \n Milk \n Eggs \n Teabags \n Bread \n Newspaper.\n\n                             Press enter to continue!");
                 Console.ReadLine();
                 Console.Clear();
-                exploreRoom();
+				System.Threading.Thread.Sleep(500);
+                contineRoom();
             }
             else
             {
                 Console.WriteLine("Invalid input, try again!");
+				System.Threading.Thread.Sleep(500);
                 examineFire();
             }
         }
+
+		public static void contineRoom()
+		{
+			Console.WriteLine ("\nYou put the list in your pocket and you continue into the room.\nYou snag your robe on a nail as you walk past a cabinet.\nYour robe tears.\nYou notice a slight sting as the nail rips your skin a little.");
+			System.Threading.Thread.Sleep (5000);
+			Console.Clear ();
+			System.Threading.Thread.Sleep (1000);
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine ("\n\n\n\n\n\n\n\n\n                           You now have blood poisoning!\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			Console.ForegroundColor = ConsoleColor.White;
+			System.Threading.Thread.Sleep (2000);
+			Console.Clear ();
+			Console.WriteLine ("\nYou continue to walk into the room, bleeding a little.\nYou observe an open window.");
+			System.Threading.Thread.Sleep (7500);
+			Console.Clear ();
+			Console.WriteLine ("\nPress enter to continue!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			Console.ReadLine ();
+			Console.Clear ();
+			window ();
+		}
+
+		public static void window()
+		{
+			Console.WriteLine ("test");
+		}
 	}
 }
