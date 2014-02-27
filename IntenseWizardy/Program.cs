@@ -11,7 +11,7 @@ namespace IntenseWizardy
 		public static void Main (string[] args)
 		{
 			Console.Title = "Intense Wizardy";
-			System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Matt\Dropbox\Public\audio.wma");
+			System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\Users\Matt\Documents\media.wav");
 			player.Play();
 			Console.ForegroundColor = ConsoleColor.White;
 			Console.WriteLine("\n \n \n \n \n \n \n \n                     Intense Wizardy! - A Text Adventure Game! \n\n                   : Created by Sips and written by Puddleduck :         \n\n                             Press enter to begin!\n\n\n\n\n\n\n\n\n\n\n");
