@@ -7,6 +7,7 @@ namespace IntenseWizardy
 		static int hasClub = 0;
 		static int hasCoinPurse = 0;
 		static string age;
+        static string playerName;
 		
 		public static void Main (string[] args)
 		{
@@ -32,8 +33,39 @@ namespace IntenseWizardy
 			Console.WriteLine ("\n\n\n\n\n\n\n\n\n\n");
 			Console.ReadLine();
 			Console.Clear();
-			showIntro ();
+			setName ();
 		}
+
+        public static void setName()
+        {
+            Console.WriteLine("\nWelcome Player!\n\nPlease set your name!\n");
+
+            string name;
+
+            do
+            {
+                Console.Write("Name: ");
+                name = Console.ReadLine();
+
+                if (name != null)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    playerName = name;
+                    if (name == "") 
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\nYou didn't type a name, try again!");
+                        System.Threading.Thread.Sleep(2000);
+                        Console.Clear();
+                        setName();
+                    }
+                    Console.Clear();
+                    Console.WriteLine("\nWelcome " + playerName + "!");
+                    System.Threading.Thread.Sleep(2000);
+                    showIntro();
+                }
+            } while (name!= null);            
+        }
 
 		public static void showIntro()
 		{
