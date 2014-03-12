@@ -105,7 +105,7 @@ namespace IntenseWizardy
                     else if (checkOpen.Contains("debug"))
                     {
 						Console.Clear();
-						examineFire();
+						windowRoom();
                     }
 					else {
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -391,12 +391,66 @@ namespace IntenseWizardy
 			Console.WriteLine ("");
 			Console.ReadLine ();
 			Console.Clear ();
-			window ();
+			windowRoom();
 		}
 
-		public static void window()
+		public static void windowRoom()
 		{
-			Console.WriteLine ("test");
+			Console.WriteLine ("\nThrough the window you notice a light breeze drifting in.\nThe breeze blows against your robe a little.\nYou are shocked by the sudden feel of cold air up your robe.\nYou clasp youur hands down on your legs.\nYou reach up to the window frame, and look outside.\n");
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("\nIt is dark, to your front you can see a well trimmed lawn with a tree.\nTo the left you can see a wall, probably part of the structure you are in.\nTo your right you can see nothing at all. All you see is darkness.");
+            System.Threading.Thread.Sleep(5000);
+            pressEnter();
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("\nDo you want to try and climb out of the window?\n");
+
+            string window;
+
+            do
+            {
+                Console.Write("Answer: ");
+
+                window = Console.ReadLine();
+
+                if (window != null)
+                {
+
+                    Console.Write("Answer: " + window);
+
+                    if (window.Contains("yes") || window.Contains("Yes") || window.Contains("YES"))
+                    {
+                        Console.Clear();
+                        System.Threading.Thread.Sleep(500);
+                        frontLawn();
+                    }
+                    else if (window.Contains("no") || window.Contains("No") || window.Contains("NO"))
+                    {
+                        Console.Clear();
+                        System.Threading.Thread.Sleep(500);
+                        furtherWindowRoom();
+                    }
+                    else
+                    {
+                        Console.WriteLine(" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        System.Threading.Thread.Sleep(500);
+                        windowRoom();
+                    }
+                }
+
+            } while (window != null);
 		}
+
+        public static void frontLawn()
+        {
+            Console.WriteLine("yes");
+            Console.ReadKey();
+        }
+
+        public static void furtherWindowRoom()
+        {
+            Console.WriteLine("no");
+            Console.ReadKey();
+        }
 	}
 }
