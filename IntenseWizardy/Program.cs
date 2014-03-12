@@ -73,8 +73,7 @@ namespace IntenseWizardy
                     else if (checkOpen.Contains("debug"))
                     {
 						Console.Clear();
-						hasClub = 0;
-						enterRoom();
+						examineFire();
                     }
 					else {
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -231,7 +230,9 @@ namespace IntenseWizardy
 				Console.Clear();
 				outRoomHallway ();
 			} else if (hasClub == 1) {
-                Console.WriteLine("\nYou swing your club and hit the troll on the back of the head.\nThe troll dies.\nThe troll drops a bag of gold coins.\n\n                             Press enter to continue!");
+                Console.WriteLine("\nYou swing your club and hit the troll on the back of the head.\nThe troll dies.\nThe troll drops a bag of gold coins.\n");
+				pressEnter ();
+				Console.WriteLine ("\n\n\n\n\n\n\n\n\n\n\n");
 				Console.ReadLine();
 				Console.Clear();
 				coinChoice ();
@@ -310,7 +311,7 @@ namespace IntenseWizardy
 
         public static void examineFire()
         {
-            Console.WriteLine("\nDo you examine the fire?\nPerhaps you could get a better look at the scraps of paper.\n");
+            Console.WriteLine("\nDo you examine the fire?\nPerhaps you could get a better look at the scraps of paper.\n\nType your answer!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
             string hot = Console.ReadLine();
 
@@ -327,7 +328,9 @@ namespace IntenseWizardy
             else if (hot == "no" || hot == "No" || hot == "n" || hot == "N" || hot == "NO")
             {
                 Console.Clear();
-                Console.WriteLine("\nGood choice, the other option was certain death.\nYou continue to explore the room.\nYou find a note on a table in one corner of the room.\nYou read the note.\nThe note reads: \n Milk \n Eggs \n Teabags \n Bread \n Newspaper.\n\n                             Press enter to continue!");
+                Console.WriteLine("\nGood choice, the other option was certain death.\nYou continue to explore the room.\nYou find a note on a table in one corner of the room.\nYou read the note.\nThe note reads: \n Milk \n Eggs \n Teabags \n Bread \n Newspaper.\n");
+				pressEnter ();
+				Console.WriteLine ("\n\n");
                 Console.ReadLine();
                 Console.Clear();
 				System.Threading.Thread.Sleep(500);
