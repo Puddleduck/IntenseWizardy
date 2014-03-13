@@ -26,6 +26,16 @@ namespace IntenseWizardy
 			Console.WriteLine ("\n                             Press enter to continue!\n");
 		}
 
+		public static void setTextRed()
+		{
+			Console.ForegroundColor = ConsoleColor.Red;
+		}
+
+		public static void setTextWhite()
+		{
+			Console.ForegroundColor = ConsoleColor.White;
+		}
+
 		public static void showNotes()
 		{
 			Console.WriteLine ("\nWelcome to Intense Wizardy! \n\nNotes:\nThis is my first complete game, so forgive any bugs and hopefully they aren't\ntoo game breaking. This game will parse your text to the best of my ability,\nbut it may not understand what you mean.\nTry and keep any imput short and sweet, and please listen to what it tells you\nto do!\n");
@@ -105,7 +115,7 @@ namespace IntenseWizardy
                     else if (checkOpen.Contains("debug"))
                     {
 						Console.Clear();
-						windowRoom();
+						frontLawn();
                     }
 					else {
 						Console.WriteLine (" is an invalid input, try again!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -382,9 +392,9 @@ namespace IntenseWizardy
 			System.Threading.Thread.Sleep (5000);
 			Console.Clear ();
 			System.Threading.Thread.Sleep (1000);
-			Console.ForegroundColor = ConsoleColor.Red;
+			setTextRed ();
 			Console.WriteLine ("\n\n\n\n\n\n\n\n\n                           You now have blood poisoning!\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-			Console.ForegroundColor = ConsoleColor.White;
+			setTextWhite();
 			System.Threading.Thread.Sleep (2000);
 			Console.Clear ();
 			Console.WriteLine ("\nYou continue to walk into the room, bleeding a little.\nYou observe an open window.\n\n                            Press enter to continue!\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -443,9 +453,25 @@ namespace IntenseWizardy
 
         public static void frontLawn()
         {
-            Console.WriteLine("yes");
-            Console.ReadKey();
+			Console.WriteLine ("\nYou stumble out of the window, treading on the grass outside.\nYou stumble and fall to your knees.\nYou look up, it has suddenly got foggy.\nYou struggle to see very far infront of you.\nAn ominous light emerges from the fog, almost blinding you.\n\nYou hear a booming voice!\n\n");
+			setTextRed ();
+			System.Threading.Thread.Sleep (2500);
+			Console.WriteLine("\"" + playerName + ", You are the chosen one!\n\nYou must lead this land and help us escape from tyrany!\"");
+			setTextWhite ();
+			Console.WriteLine ("\n\nYou panic, not knowing where this voice is coming from.");
+			pressEnter ();
+			Console.ReadLine();
+			voiceEncounter ();
+			Console.Clear ();
         }
+
+		public static void voiceEncounter()
+		{
+			setTextRed ();
+			Console.WriteLine ("");
+			setTextWhite ();
+			Console.ReadLine ();
+		}
 
         public static void furtherWindowRoom()
         {
